@@ -1,0 +1,4 @@
+my_env
+__pycashe__
+.mypy_cache
+u2net.onnx
