@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>✂️ rmbg</title>
+    <title>🧈 rmbg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
     <style>
       body {
         height: 100vh;
         display: flex;
-
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        text-align: center;
+        align-items: center;
+        background-color: #0f0e17;
       }
 
       .drop-zone {
@@ -22,16 +25,45 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        background-color: #ff8906;
       }
 
       .drop-zone.dragover {
-        background-color: #f0f0f0;
+        background-color: #CF7004;
       }
-    </style>
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .top-header {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 6vh;
+        font-family: "Rubik Iso", system-ui;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .logo {
+        width: 50%;
+        height: 50%;
+        margin-right: 2vw;
+      }
+
+      .header {
+        font-size: x-large;
+      }
+      </style>
   </head>
   <body>
+    <nav class="navbar">
+      <h1 class="top-header">Easy Erase</h1>
+    </nav>
     <div id="dropZone" class="drop-zone">
-      <h1>rmbg</h1>
+      <h1 class="header">Drop here</h1>
       <form
         id="uploadForm"
         action="/image"

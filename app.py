@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file
 from rembg import remove
 from PIL import Image
+from waitress import serve
 from io import BytesIO
 
 app = Flask(__name__)
@@ -29,9 +30,12 @@ def upload_file():
     image_io.seek(0)
 
     return send_file(
-        image_io, mimetype="image/png", as_attachment=True, download_name="_rmbg.png"
+        image_io,
+        mimetype="image/png",
+        as_attachment=True,
+        download_name="easy erase.png",
     )
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5100)
+    serve(app=app, host="0.0.0.0", port=5100)
