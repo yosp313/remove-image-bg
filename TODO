@@ -1,0 +1,4 @@
+Todo:
+  [] Make the UI prettier
+  [] Implement a PostgreSQL DB to store the images
+  [] Deploy? 
