@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>🧈 rmbg</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-900">
-    <section>
-      <div class="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
-        <div class="space-y-5 max-w-4xl mx-auto text-center">
-          <h1 class="text-sm text-indigo-600 font-medium">
-            Remove any background
-          </h1>
-          <h2 class="text-4xl text-white font-extrabold mx-auto md:text-5xl">
-            Easy Erase: Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">AI-Powered Image Background Remover</span>
-          </h2>
-          <p class="max-w-2xl mx-auto">
-            Welcome to Easy Erase – your ultimate solution for effortlessly removing backgrounds from images using cutting-edge artificial intelligence technology.
-          </p>
-        </div>
-        <div id="dropZone" class="flex items-center justify-center w-full h-full pt-20">
-          <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-              <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-              </svg>
-              <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-              <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-            </div>
-            <form action="/image" method="post" id="uploadForm" enctype="multipart/form-data">
-              <input id="fileInput" type="file" name="file" hidden/>
-              <input type="submit" value="rm" hidden/>
-              <form/>
-          </label>
-        </div> 
+
+<head>
+  <title>🧈 rmbg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900">
+  <section>
+    <div class="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8">
+      <div class="space-y-5 max-w-4xl mx-auto text-center">
+        <h1 class="text-sm text-indigo-600 font-medium">
+          Remove any background
+        </h1>
+        <h2 class="text-4xl text-white font-extrabold mx-auto md:text-5xl">
+          Easy Erase: Your <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#E114E5]">AI-Powered Image
+            Background Remover</span>
+        </h2>
+        <p class="max-w-2xl mx-auto">
+          Welcome to Easy Erase – your ultimate solution for effortlessly removing backgrounds from images using
+          cutting-edge artificial intelligence technology.
+        </p>
       </div>
-    </section>
-  </body>
-  <script>
+      <div id="dropZone" class="flex items-center justify-center w-full h-full pt-20">
+        <label for="dropzone-file"
+          class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+          <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span>
+              or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+          </div>
+          <form action="/image" method="post" id="uploadForm" enctype="multipart/form-data">
+            <input id="fileInput" type="file" name="file" hidden />
+            <input type="submit" value="rm" hidden />
+            <form />
+        </label>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
   let dropZone = document.getElementById("dropZone");
   let fileInput = document.getElementById("fileInput");
   let uploadForm = document.getElementById("uploadForm");
@@ -71,6 +80,7 @@
     fileInput.files = e.dataTransfer.files;
     uploadForm.submit();
   });
-  </script>
-  </body>
+</script>
+</body>
+
 </html>
